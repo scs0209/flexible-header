@@ -1,0 +1,89 @@
+body {
+  font-family: 'Source Sans Pro';
+  margin:0;
+}
+a{
+  text-decoration: none;
+  color: white;
+}
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: blue;
+  padding: 8px 12px;
+}
+
+.navbar__logo{
+  font-size: 24px
+  color: white;
+}
+.navar__logo i{
+  color: orange;
+}
+
+.navar__menu{
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+}
+/*아래는 메뉴 리스트 간격 벌어지게 하는 것 */
+.navar__menu li{
+  padding: 8px 12px;
+}
+
+.navar__menu li:hover{
+  background-color: yellow; /*선택하면 색이 바뀜*/
+  border-radius: 4px; /* 선택하면 상자가 뜨는데 상자의 모서리 부분을 둥글게 해줌*/
+}
+.navar__icons{
+  list-style: none;
+  color: white;
+  display: flex;
+  padding-left: 0;
+}
+.navar__icons li{
+  padding: 8px 12px;
+}
+.navbar__toggleb{
+  display: none;
+  position: absolute;
+  right: 32px;
+  font-size: 24px;
+  color: orange;
+}
+
+@media screen and (max-width: 768px){
+  .navbar{
+    flex-direction: column;/* 창이 768px보다 작으면 column형태로 속성들이 보여짐*/
+    align-items: flex-start;
+    padding: 8px 24px;
+  }
+  .navar__menu{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  .navbar__menu a{
+    display: block;
+  }
+/* 선택하면 나타나는 하이라이트 상자가 작아서 화면에 꽉차게 변경하는 명령문*/
+  .navar__menu li{
+  width: 100%;
+  text-align: center;
+}
+  .navar__icons{
+    display: none;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .navbar__toggleb{
+    display:block;
+  }
+  .navar__menu.active,
+  .navar__icons.active{
+    display: flex;
+  }
+}
